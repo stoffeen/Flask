@@ -2,22 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Temp Readings</title>
-    <style>
-        table {
-            width: 80%;
-            border: 1px black solid;
-        }
-
-        td {
-            border: 1px black solid;
-        }
-    </style>
+    <title>Rumstemperaturer</title>
+    <link rel="stylesheet" type="text/css" href="{{ 
+        url_for('static',filename='css/main.css') }}">
 </head>
 <body>
-    <table>
+<a href="{{ url_for('graph') }}">Graph</a>
+</br>
+    <table class="sortable">
         <tr>
-            <th>Sensor</th>
+            <th>Room</th>
             <th>Date & Time</th>
             <th>Temp Reading</th>
         </tr>
@@ -36,5 +30,8 @@
         {% endfor %}
     </table>
 
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+
 </body>
 </html>
+
